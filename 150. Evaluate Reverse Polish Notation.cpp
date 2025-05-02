@@ -29,12 +29,9 @@ public:
 /*class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
-        /*
-            ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
 
-            res = 17 + 5 == 22
-            0
-        */
+            //["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+
         stack<int> st;
         for(string &s : tokens ){
 
