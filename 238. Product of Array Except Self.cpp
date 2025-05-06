@@ -27,3 +27,41 @@ public:
         return result;
     }
 };
+
+
+// O(n)
+/*
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        // [1,2,3,4]
+        // []
+        int multi = 1;
+        vector<int> suffix(nums.size()),res(nums.size(),0);
+        int zeros = 0;
+
+        for(int i=0;i<nums.size();i++){
+            if (nums[i] == zeros ){
+                zeros++;
+                if(zeros > 1) return res;
+                continue;
+            }
+            multi *= nums[i];
+            suffix[i] = multi;
+        }
+
+        for(int i=0;i<nums.size();i++){
+
+            if(!zeros){
+                res[i] = suffix[nums.size()-1]/nums[i];
+            }else{
+                res[i] = (nums[i] == 0) ? suffix[nums.size()-1] : 0;
+            }
+
+        }
+
+        return res;
+    }
+};
+ * */
